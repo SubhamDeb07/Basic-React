@@ -1,4 +1,4 @@
-
+import NewExpense from './components/newExpense/NewExpense';
 import './App.css';
 import ExpenseItem from './components/ExpenseItem'
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <h2>Hello React</h2>
-
+      <NewExpense></NewExpense>
      {expenseItem}
     </div>
   );

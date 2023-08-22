@@ -9,6 +9,7 @@ function ExpenseItem(props){
     <ExpenseDate date={props.date}/>
    
         <ExpenseDetails item={props.item} location={props.location} amount={props.amount}/>
+
     </div>
     
     )
