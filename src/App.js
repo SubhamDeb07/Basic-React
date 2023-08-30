@@ -1,35 +1,40 @@
+import React, { useState } from 'react';
 import NewExpense from './components/newExpense/NewExpense';
 import './App.css';
 import ExpenseItem from './components/ExpenseItem'
 
-function App() {
-  const expense = [
-    {
-      item:"Partying",
-      location:"Bangalore",
-      amount: "₹1000",
-      date: new Date(2023,8,15)
-    }
-  ]
 
-  const expenseItem = []
-
-  for(let i = 0;i<4;i++){
-     expenseItem.push(
-      <ExpenseItem
-   
-      item = {expense[0].item}
-      location = {expense[0].location}
-      amount = {expense[0].amount}
-      date = {expense[0].date}
-      />
-     )
+const dummy_data = [
+  {
+    id: 1,
+    item:"Partying",
+    location:"Bangalore",
+    amount: "₹1000",
+    date: new Date(2022,8,15)
   }
+]
+
+function App() {
+
+  const [addedData, setData] = useState(dummy_data)
+
+  const newExpense = (expense) =>{
+    console.log(expense)
+      setData((prevExpense)=>{
+        return [expense,...prevExpense]
+      })
+  }
+
+
+
   return (
     <div className="App">
-      <h2>Hello React</h2>
-      <NewExpense></NewExpense>
-     {expenseItem}
+      <h2>Expense Tracker</h2>
+      
+      <NewExpense enterNewExpense={newExpense}></NewExpense>
+      
+      <ExpenseItem expense = {addedData}
+   />
     </div>
   );
 }
