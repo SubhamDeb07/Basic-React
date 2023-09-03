@@ -9,14 +9,14 @@ const dummy_data = [
     id: 1,
     item:"Partying",
     location:"Bangalore",
-    amount: "₹1000",
-    date: new Date(2022,8,15)
+    amount: 1000,
+    date: new Date(2020,8,15)
   }
 ]
 
 function App() {
 
-  const [addedData, setData] = useState(dummy_data)
+  const [expenses, setData] = useState(dummy_data)
 
   const newExpense = (expense) =>{
     console.log(expense)
@@ -33,7 +33,7 @@ function App() {
       
       <NewExpense enterNewExpense={newExpense}></NewExpense>
       
-      <ExpenseItem expense = {addedData}
+      <ExpenseItem expense = {expenses}
    />
     </div>
   );

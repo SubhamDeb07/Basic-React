@@ -23,7 +23,7 @@ const [setLocation, updateLocation] = useState("")
     const expenseItem = {
       item :setTitle,
       location:setLocation,
-      amount :`₹${setAmount}`,
+      amount :setAmount,
       date :new Date(setDate)
     }
     props.saveExpenses(expenseItem)
